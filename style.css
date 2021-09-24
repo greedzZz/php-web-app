@@ -1,6 +1,7 @@
 body {
     font-family: 'Roboto Slab', serif;
 }
+
 header {
     background-color: black;
     color: white;
@@ -21,4 +22,71 @@ svg {
 
 .axis {
     font-weight: bold;
+}
+
+.form {
+    margin-left: 0.64%;
+}
+
+.check-block {
+    margin-right: 3.27%;
+}
+
+.check-1 {
+    margin-right: 2.6%;
+}
+
+.check-2 {
+    margin-right: 2.32%;
+}
+
+.check-3 {
+    margin-right: 2.45%;
+}
+
+.buttonR {
+    width: 50px;
+    margin-right: 0.67%;
+    background-color: white;
+    border-width: 1px;
+}
+
+.formButton {
+    width: 117px;
+    background-color: white;
+    border-width: 1px;
+    margin-right: 0.55%;
+}
+
+.mainButtons {
+    margin-left: 4.1%;
+}
+
+button {
+    font-family: 'Roboto Slab', serif;
+}
+
+input {
+    font-family: 'Roboto Slab', serif;
+}
+
+.table {
+    width: 70%;
+    float: right;
+    background-color: black;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 1.28%;
+    margin-right: 0.64%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.table > span {
+    margin-right: 6%;
+}
+
+.columnX {
+    margin-left: 40px;
 }

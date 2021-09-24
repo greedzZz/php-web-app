@@ -12,9 +12,17 @@
 </head>
 <body>
 <header>
-    <span class="author">Gazizov Anvar, P3233</span>
+    <span>Gazizov Anvar, P3233</span>
     <span class="variant">#33004</span>
 </header>
+<div class="table">
+    <span class="columnX">X</span>
+    <span>Y</span>
+    <span>R</span>
+    <span>Current time</span>
+    <span>Execution time</span>
+    <span>Hit fact</span>
+</div>
 <div class="plane">
     <svg width="366" height="366">
         <rect width="366" height="366" style="fill: white; stroke: black; stroke-width: 8px"></rect>
@@ -52,7 +60,43 @@
               style="fill: lightgray; stroke: gray; stroke-width:2; fill-opacity:0.5; stroke-opacity:0.2"></path>
     </svg>
 </div>
-<div class="form"></div>
-<div class="table"></div>
+<div class="form"> <!--<input type="hidden"> -->
+    <div>
+        <p>X value:</p>
+        <div>
+            <label class="check-block"><input type="checkbox" name="Xvalue" value="-2">-2</label>
+            <label class="check-block"><input type="checkbox" name="Xvalue" value="-1">-1</label>
+            <label class="check-block"><input type="checkbox" name="Xvalue" value="0">0</label>
+            <label class="check-block"><input type="checkbox" name="Xvalue" value="1">1</label>
+            <label class="check-block"><input type="checkbox" name="Xvalue" value="2">2</label>
+        </div>
+        <div>
+            <label class="check-1"><input type="checkbox" name="Xvalue" value="-1.5">-1.5</label>
+            <label class="check-2"><input type="checkbox" name="Xvalue" value="-0.5">-0.5</label>
+            <label class="check-3"><input type="checkbox" name="Xvalue" value="0.5">0.5</label>
+            <label><input type="checkbox" name="Xvalue" value="1.5">1.5</label>
+        </div>
+    </div>
+    <br>
+    <div>
+        <label>Y value:</label>
+        <label><input type="text" size="36" maxlength="10"
+                      placeholder="                                  Y ∈ ( -3 ; 5 )"></label>
+    </div>
+    <br>
+    <div>
+        <label>R value:</label>
+        <button class="buttonR" type="button" value="1">1</button>
+        <button class="buttonR" type="button" value="2">2</button>
+        <button class="buttonR" type="button" value="3">3</button>
+        <button class="buttonR" type="button" value="4">4</button>
+        <button class="buttonR" type="button" value="5">5</button>
+    </div>
+    <br>
+    <div class="mainButtons">
+        <button class="formButton" type="submit">Submit</button>
+        <button class="formButton" type="reset">Reset</button>
+    </div>
+</div>
 </body>
 </html>
