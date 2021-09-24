@@ -1,0 +1,24 @@
+body {
+    font-family: 'Roboto Slab', serif;
+}
+header {
+    background-color: black;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 16px;
+    margin: -0.51% -0.51% 0 -0.51%;
+    /*margin: -8px -8px 0 -8px;*/
+}
+
+.variant {
+    float: right;
+}
+
+svg {
+    margin: 1.28% 0 0 0.64%;
+}
+
+.axis {
+    font-weight: bold;
+}
