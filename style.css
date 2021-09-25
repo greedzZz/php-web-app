@@ -7,12 +7,11 @@ header {
     color: white;
     font-size: 36px;
     font-weight: bold;
-    padding: 16px;
+    padding: 1.15%;
     margin: -0.51% -0.51% 0 -0.51%;
-    /*margin: -8px -8px 0 -8px;*/
 }
 
-.variant {
+#variant {
     float: right;
 }
 
@@ -32,26 +31,26 @@ svg {
     margin-right: 3.27%;
 }
 
-.check-1 {
+#check-1 {
     margin-right: 2.6%;
 }
 
-.check-2 {
+#check-2 {
     margin-right: 2.32%;
 }
 
-.check-3 {
+#check-3 {
     margin-right: 2.45%;
 }
 
-.buttonR {
+button[type = "button"] {
     width: 50px;
     margin-right: 0.67%;
     background-color: white;
     border-width: 1px;
 }
 
-.formButton {
+.mainButtons > button {
     width: 117px;
     background-color: white;
     border-width: 1px;
@@ -66,7 +65,7 @@ button {
     font-family: 'Roboto Slab', serif;
 }
 
-input {
+::placeholder {
     font-family: 'Roboto Slab', serif;
 }
 
@@ -79,14 +78,14 @@ input {
     font-weight: bold;
     margin-top: 1.28%;
     margin-right: 0.64%;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    padding-top: 0.85%;
+    padding-bottom: 0.85%;
 }
 
 .table > span {
     margin-right: 6%;
 }
 
-.columnX {
-    margin-left: 40px;
+#columnX {
+    margin-left: 4%;
 }
