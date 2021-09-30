@@ -78,18 +78,35 @@ input[type="text"] {
 .table {
     width: 70%;
     float: right;
-    background-color: black;
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
     margin-top: 1.28%;
     margin-right: 0.64%;
     padding-top: 0.85%;
     padding-bottom: 0.85%;
 }
 
+
+th {
+    font-size: 30px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+}
+
+td {
+    text-align: center;
+    font-size: 22px;
+}
+
+table {
+    width: 100%;
+}
+
+/*.table-head > span{*/
+/*    margin-right: 6%;*/
+/*}*/
+
 .table > span {
-    margin-right: 6%;
+    margin-left: 6%;
 }
 
 #columnX {
@@ -128,7 +145,4 @@ button[type="button"]:hover {
 button[type="button"].selectedR {
     color: white;
     background-color: black;
-}
-
-input[type="checkbox"].selectedX {
 }

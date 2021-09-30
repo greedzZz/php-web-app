@@ -1,7 +1,47 @@
 $(function () {
     $('form').submit(function (event) {
         event.preventDefault();
-        alert(validateData());
+        if (validateData()) {
+            $.ajax({
+                url: "script.php",
+                method: "POST",
+                data: {x: getX(), y: getY(), r: getR()},
+                cache: false,
+                success: function (data) {
+                    let response = JSON.parse(data);
+                    if (response.isValid) {
+                        nextRow = "<tr>";
+                        nextRow += "<td>" + response.x + "</td>";
+                        nextRow += "<td>" + response.y + "</td>";
+                        nextRow += "<td>" + response.r + "</td>";
+                        nextRow += "<td>" + response.currentTime + "</td>";
+                        nextRow += "<td>" + response.executionTime + "</td>";
+                        nextRow += "<td>" + response.hit + "</td>";
+                        nextRow += "</tr>";
+                        $("#result-table").append(nextRow);
+                    } else alert("Unexpected error has occured");
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    console.log(msg);
+                }
+            });
+        }
     })
 
     function getX() {
@@ -74,12 +114,55 @@ $(function () {
     }
 
     function validateData() {
-        return validateX() && validateY() && validateR();
+        let x = validateX();
+        let y = validateY();
+        let r = validateR();
+        return x && y && r;
     }
 
     function isNum(num) {
         return !isNaN(num) && isFinite(num);
     }
+
+    function clearTable() {
+        $.ajax({
+            url: "clear.php",
+            type: "POST",
+            success: function () {
+                $("#result-table > tr").remove();
+            }
+        });
+    }
+
+    function restore() {
+        $.ajax({
+            url: "restore.php",
+            type: "POST",
+            success: function (data) {
+                if (typeof data == "string") {
+                    data = JSON.parse(data);
+                }
+                for (str of data) {
+                    newRow = '<tr>';
+                    newRow += '<td>' + str.x + '</td>';
+                    newRow += '<td>' + str.y + '</td>';
+                    newRow += '<td>' + str.r + '</td>';
+                    newRow += '<td>' + str.currentTime + '</td>';
+                    newRow += '<td>' + str.executionTime + '</td>';
+                    newRow += '<td>' + str.hit + '</td></tr>';
+                    $('#result-table').append(newRow);
+                }
+            }
+        });
+    }
+
+    $("button[type='reset']").click(function () {
+        if ($("button[type='button']").hasClass("selectedR")) {
+            $("button[type='button']").removeClass("selectedR");
+            $("#Rbuttons").removeClass("ready");
+        }
+        clearTable();
+    })
 
     $("button[type='button']").click(function () {
         if ($(this).hasClass("selectedR")) {
@@ -92,4 +175,5 @@ $(function () {
             $("#Rbuttons").removeClass("buttons-error");
         }
     });
+    restore();
 });
