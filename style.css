@@ -67,6 +67,12 @@ button {
 
 ::placeholder {
     font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+
+input[type="text"] {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
 }
 
 .table {
@@ -88,4 +94,41 @@ button {
 
 #columnX {
     margin-left: 4%;
+}
+
+.shape {
+    fill: lightgray;
+    stroke: gray;
+    stroke-width: 2;
+    fill-opacity: 0.5;
+    stroke-opacity: 0.2;
+}
+
+.shape:hover {
+    fill-opacity: 0.1;
+}
+
+.mainButtons > button:hover {
+    color: white;
+    background-color: black;
+}
+
+button[type="button"]:hover {
+    font-weight: bold;
+}
+
+.text-error, .buttons-error > button {
+    border-color: red;
+}
+
+.checkbox-error {
+    color: red;
+}
+
+button[type="button"].selectedR {
+    color: white;
+    background-color: black;
+}
+
+input[type="checkbox"].selectedX {
 }

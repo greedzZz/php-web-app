@@ -6,6 +6,7 @@
           content="Web-programming lab work #1. ITMO University. Faculty of Software Engineering and Computer Systems.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Gazizov Anvar">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <title>Web lab1</title>
@@ -52,51 +53,51 @@
         <text x="96" y="167">-R/2</text>
         <text x="32" y="167">-R</text>
 
-        <rect x="113" y="43" width="70" height="140"
-              style="fill: lightgray; stroke: gray; stroke-width:2; fill-opacity:0.5; stroke-opacity:0.2"/>
-        <polygon points="183 183 253 183 183 253"
-                 style="fill: lightgray; stroke: gray; stroke-width:2; fill-opacity:0.5; stroke-opacity:0.2"></polygon>
-        <path d="M 183 113 A 70 70 0 0 1 253 183 L 183 183 Z"
-              style="fill: lightgray; stroke: gray; stroke-width:2; fill-opacity:0.5; stroke-opacity:0.2"></path>
+        <rect class="shape" x="113" y="43" width="70" height="140"/>
+        <polygon class="shape" points="183 183 253 183 183 253"></polygon>
+        <path class="shape" d="M 183 113 A 70 70 0 0 1 253 183 L 183 183 Z"></path>
     </svg>
 </div>
 <div class="form"> <!--<input type="hidden"> -->
-    <div>
-        <p>X value:</p>
+    <form method="post">
         <div>
-            <label class="check-block"><input type="checkbox" name="Xvalue" value="-2">-2</label>
-            <label class="check-block"><input type="checkbox" name="Xvalue" value="-1">-1</label>
-            <label class="check-block"><input type="checkbox" name="Xvalue" value="0">0</label>
-            <label class="check-block"><input type="checkbox" name="Xvalue" value="1">1</label>
-            <label class="check-block"><input type="checkbox" name="Xvalue" value="2">2</label>
+            <p>X value:</p>
+            <div id="Xboxes">
+                <label class="check-block"><input type="checkbox" name="Xvalue" value="-2">-2</label>
+                <label class="check-block"><input type="checkbox" name="Xvalue" value="-1">-1</label>
+                <label class="check-block"><input type="checkbox" name="Xvalue" value="0">0</label>
+                <label class="check-block"><input type="checkbox" name="Xvalue" value="1">1</label>
+                <label class="check-block"><input type="checkbox" name="Xvalue" value="2">2</label>
+                <br>
+                <label class="check-block" id="check-1"><input type="checkbox" name="Xvalue" value="-1.5">-1.5</label>
+                <label class="check-block" id="check-2"><input type="checkbox" name="Xvalue" value="-0.5">-0.5</label>
+                <label class="check-block" id="check-3"><input type="checkbox" name="Xvalue" value="0.5">0.5</label>
+                <label class="check-block" id="check-4"><input type="checkbox" name="Xvalue" value="1.5">1.5</label>
+            </div>
         </div>
+        <br>
         <div>
-            <label id="check-1"><input type="checkbox" name="Xvalue" value="-1.5">-1.5</label>
-            <label id="check-2"><input type="checkbox" name="Xvalue" value="-0.5">-0.5</label>
-            <label id="check-3"><input type="checkbox" name="Xvalue" value="0.5">0.5</label>
-            <label id="check-4"><input type="checkbox" name="Xvalue" value="1.5">1.5</label>
+            <label>Y value:</label>
+            <label><input type="text" size="36" maxlength="10" name="Yvalue"
+                          placeholder="Y ∈ ( -3 ; 5 )"></label>
         </div>
-    </div>
-    <br>
-    <div>
-        <label>Y value:</label>
-        <label><input type="text" size="42" maxlength="10"
-                      placeholder="                                  Y ∈ ( -3 ; 5 )"></label>
-    </div>
-    <br>
-    <div>
-        <label>R value:</label>
-        <button type="button" value="1">1</button>
-        <button type="button" value="2">2</button>
-        <button type="button" value="3">3</button>
-        <button type="button" value="4">4</button>
-        <button type="button" value="5">5</button>
-    </div>
-    <br>
-    <div class="mainButtons">
-        <button type="submit">Submit</button>
-        <button type="reset">Reset</button>
-    </div>
+        <br>
+        <div id="Rbuttons">
+            <label>R value:</label>
+            <button type="button" name="Rvalue" value="1">1</button>
+            <button type="button" name="Rvalue" value="2">2</button>
+            <button type="button" name="Rvalue" value="3">3</button>
+            <button type="button" name="Rvalue" value="4">4</button>
+            <button type="button" name="Rvalue" value="5">5</button>
+        </div>
+        <br>
+        <div class="mainButtons">
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </div>
+    </form>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
