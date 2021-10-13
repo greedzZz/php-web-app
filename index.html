@@ -17,23 +17,16 @@
     <span id="variant">#33004</span>
 </header>
 <div class="table">
-    <!--style="margin-left: 4%;"-->
-    <!--        <span id="columnX">X</span>-->
-    <!--        <span>Y</span>-->
-    <!--        <span>R</span>-->
-    <!--        <span>Current time</span>-->
-    <!--        <span>Execution time</span>-->
-    <!--        <span>Hit fact</span>-->
-    <table id="result-table">
+    <table>
         <thead>
-        <tr id="table-header">
-            <th class="coords-col">X</th>
-            <th class="coords-col">Y</th>
-            <th class="coords-col">R</th>
-            <th class="time-col">Current time</th>
-            <th class="time-col">Execution time</th>
-            <th class="hitres-col">Hit fact</th>
-        </tr>
+            <tr>
+                <th class="coords-column">X</th>
+                <th class="coords-column">Y</th>
+                <th class="coords-column">R</th>
+                <th class="time-column">Current time</th>
+                <th class="time-column">Execution time</th>
+                <th>Hit fact</th>
+            </tr>
         </thead>
     </table>
 </div>
@@ -71,40 +64,40 @@
         <path class="shape" d="M 183 113 A 70 70 0 0 1 253 183 L 183 183 Z"></path>
     </svg>
 </div>
-<div class="form"> <!--<input type="hidden"> -->
+<div class="form">
     <form method="post">
         <div>
             <p>X value:</p>
-            <div id="Xboxes">
-                <label class="check-block"><input type="checkbox" name="Xvalue" value="-2">-2</label>
-                <label class="check-block"><input type="checkbox" name="Xvalue" value="-1">-1</label>
-                <label class="check-block"><input type="checkbox" name="Xvalue" value="0">0</label>
-                <label class="check-block"><input type="checkbox" name="Xvalue" value="1">1</label>
-                <label class="check-block"><input type="checkbox" name="Xvalue" value="2">2</label>
+            <div id="x-boxes">
+                <label class="check-block"><input type="checkbox" name="x-value" value="-2">-2</label>
+                <label class="check-block"><input type="checkbox" name="x-value" value="-1">-1</label>
+                <label class="check-block"><input type="checkbox" name="x-value" value="0">0</label>
+                <label class="check-block"><input type="checkbox" name="x-value" value="1">1</label>
+                <label class="check-block"><input type="checkbox" name="x-value" value="2">2</label>
                 <br>
-                <label class="check-block" id="check-1"><input type="checkbox" name="Xvalue" value="-1.5">-1.5</label>
-                <label class="check-block" id="check-2"><input type="checkbox" name="Xvalue" value="-0.5">-0.5</label>
-                <label class="check-block" id="check-3"><input type="checkbox" name="Xvalue" value="0.5">0.5</label>
-                <label class="check-block" id="check-4"><input type="checkbox" name="Xvalue" value="1.5">1.5</label>
+                <label class="check-block" id="check-1"><input type="checkbox" name="x-value" value="-1.5">-1.5</label>
+                <label class="check-block" id="check-2"><input type="checkbox" name="x-value" value="-0.5">-0.5</label>
+                <label class="check-block" id="check-3"><input type="checkbox" name="x-value" value="0.5">0.5</label>
+                <label class="check-block" id="check-4"><input type="checkbox" name="x-value" value="1.5">1.5</label>
             </div>
         </div>
         <br>
         <div>
             <label>Y value:</label>
-            <label><input type="text" size="36" maxlength="10" name="Yvalue"
+            <label><input type="text" size="36" maxlength="10" name="y-value"
                           placeholder="Y ∈ ( -3 ; 5 )"></label>
         </div>
         <br>
-        <div id="Rbuttons">
+        <div id="r-buttons">
             <label>R value:</label>
-            <button type="button" name="Rvalue" value="1">1</button>
-            <button type="button" name="Rvalue" value="2">2</button>
-            <button type="button" name="Rvalue" value="3">3</button>
-            <button type="button" name="Rvalue" value="4">4</button>
-            <button type="button" name="Rvalue" value="5">5</button>
+            <button type="button" name="r-value" value="1">1</button>
+            <button type="button" name="r-value" value="2">2</button>
+            <button type="button" name="r-value" value="3">3</button>
+            <button type="button" name="r-value" value="4">4</button>
+            <button type="button" name="r-value" value="5">5</button>
         </div>
         <br>
-        <div class="mainButtons">
+        <div class="main-buttons">
             <button type="submit">Submit</button>
             <button type="reset">Reset</button>
         </div>

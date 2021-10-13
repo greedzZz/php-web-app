@@ -1,4 +1,4 @@
-body {
+body, button {
     font-family: 'Roboto Slab', serif;
 }
 
@@ -19,7 +19,7 @@ svg {
     margin: 1.28% 0 0 0.64%;
 }
 
-.axis {
+.axis, button[type="button"]:hover {
     font-weight: bold;
 }
 
@@ -50,27 +50,18 @@ button[type = "button"] {
     border-width: 1px;
 }
 
-.mainButtons > button {
+.main-buttons button {
     width: 117px;
     background-color: white;
     border-width: 1px;
     margin-right: 0.55%;
 }
 
-.mainButtons {
+.main-buttons {
     margin-left: 4.1%;
 }
 
-button {
-    font-family: 'Roboto Slab', serif;
-}
-
-::placeholder {
-    font-family: 'Roboto Slab', serif;
-    text-align: center;
-}
-
-input[type="text"] {
+::placeholder, input[type="text"] {
     font-family: 'Roboto Slab', serif;
     text-align: center;
 }
@@ -80,16 +71,15 @@ input[type="text"] {
     float: right;
     margin-top: 1.28%;
     margin-right: 0.64%;
-    padding-top: 0.85%;
-    padding-bottom: 0.85%;
 }
-
 
 th {
     font-size: 30px;
     font-weight: bold;
     background-color: black;
     color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 td {
@@ -99,18 +89,15 @@ td {
 
 table {
     width: 100%;
+    border-collapse: collapse;
 }
 
-/*.table-head > span{*/
-/*    margin-right: 6%;*/
-/*}*/
-
-.table > span {
-    margin-left: 6%;
+.coords-column {
+    width: 8%;
 }
 
-#columnX {
-    margin-left: 4%;
+.time-column {
+    width: 27%;
 }
 
 .shape {
@@ -125,16 +112,12 @@ table {
     fill-opacity: 0.1;
 }
 
-.mainButtons > button:hover {
+.main-buttons button:hover {
     color: white;
     background-color: black;
 }
 
-button[type="button"]:hover {
-    font-weight: bold;
-}
-
-.text-error, .buttons-error > button {
+.text-error, .buttons-error button {
     border-color: red;
 }
 
@@ -142,7 +125,7 @@ button[type="button"]:hover {
     color: red;
 }
 
-button[type="button"].selectedR {
+button[type="button"].selected-r {
     color: white;
     background-color: black;
 }

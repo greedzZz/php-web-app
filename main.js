@@ -1,5 +1,5 @@
 $(function () {
-    $('form').submit(function (event) {
+    $("form").submit(function (event) {
         event.preventDefault();
         if (validateData()) {
             $.ajax({
@@ -18,8 +18,8 @@ $(function () {
                         nextRow += "<td>" + response.executionTime + "</td>";
                         nextRow += "<td>" + response.hit + "</td>";
                         nextRow += "</tr>";
-                        $("#result-table").append(nextRow);
-                    } else alert("Unexpected error has occured");
+                        $("table").append(nextRow);
+                    } else alert("Unexpected error has occurred.");
                 },
                 error: function (jqXHR, exception) {
                     var msg = '';
@@ -57,7 +57,7 @@ $(function () {
     }
 
     function getY() {
-        let y = $("input[name='Yvalue']").val();
+        let y = $("input[name='y-value']").val();
         let regex = /^[+-]?[0-9]{1,10}([.]?[0-9]{1,10})?$/;
         if (y.match(regex)) {
             return parseFloat(y);
@@ -67,8 +67,8 @@ $(function () {
     }
 
     function getR() {
-        if ($("#Rbuttons").hasClass("ready")) {
-            return parseFloat($("button[type='button'].selectedR").val());
+        if ($("#r-buttons").hasClass("ready")) {
+            return parseFloat($("button[type='button'].selected-r").val());
         } else {
             return NaN;
         }
@@ -104,11 +104,11 @@ $(function () {
     }
 
     function validateR() {
-        let ready = $("#Rbuttons").hasClass("ready");
+        let ready = $("#r-buttons").hasClass("ready");
         if (!ready) {
-            $("#Rbuttons").addClass("buttons-error");
+            $("#r-buttons").addClass("buttons-error");
         } else {
-            $("#Rbuttons").removeClass("buttons-error");
+            $("#r-buttons").removeClass("buttons-error");
         }
         return ready;
     }
@@ -129,7 +129,7 @@ $(function () {
             url: "clear.php",
             type: "POST",
             success: function () {
-                $("#result-table > tr").remove();
+                $("table > tr").remove();
             }
         });
     }
@@ -150,29 +150,29 @@ $(function () {
                     newRow += '<td>' + str.currentTime + '</td>';
                     newRow += '<td>' + str.executionTime + '</td>';
                     newRow += '<td>' + str.hit + '</td></tr>';
-                    $('#result-table').append(newRow);
+                    $('table').append(newRow);
                 }
             }
         });
     }
 
     $("button[type='reset']").click(function () {
-        if ($("button[type='button']").hasClass("selectedR")) {
-            $("button[type='button']").removeClass("selectedR");
-            $("#Rbuttons").removeClass("ready");
+        if ($("button[type='button']").hasClass("selected-r")) {
+            $("button[type='button']").removeClass("selected-r");
+            $("#r-buttons").removeClass("ready");
         }
         clearTable();
     })
 
     $("button[type='button']").click(function () {
-        if ($(this).hasClass("selectedR")) {
-            $(this).removeClass("selectedR");
-            $("#Rbuttons").removeClass("ready");
+        if ($(this).hasClass("selected-r")) {
+            $(this).removeClass("selected-r");
+            $("#r-buttons").removeClass("ready");
         } else {
-            $(this).addClass("selectedR");
-            $(this).siblings("button.selectedR").removeClass("selectedR");
-            $("#Rbuttons").addClass("ready");
-            $("#Rbuttons").removeClass("buttons-error");
+            $(this).addClass("selected-r");
+            $(this).siblings("button.selected-r").removeClass("selected-r");
+            $("#r-buttons").addClass("ready");
+            $("#r-buttons").removeClass("buttons-error");
         }
     });
     restore();
