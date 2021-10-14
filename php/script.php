@@ -10,7 +10,7 @@ function validateY($y)
 {
     $Y_MIN = -3;
     $Y_MAX = 5;
-    return isset($y) && is_numeric($y) && ($y > $Y_MIN) && $y < $Y_MAX;
+    return isset($y) && is_numeric($y) && $y > $Y_MIN && $y < $Y_MAX;
 }
 
 function validateR($r)
@@ -26,12 +26,12 @@ function validateData($x, $y, $r)
 
 function checkCircle($x, $y, $r)
 {
-    return $x >= 0 && $y >= 0 && $x <= $r / 2 && $y <= $r / 2 && sqrt($x * $x + $y * $y) <= $r / 2;
+    return $x >= 0 && $y >= 0 && sqrt($x * $x + $y * $y) <= $r / 2;
 }
 
 function checkTriangle($x, $y, $r)
 {
-    return $x >= 0 && $y <= 0 && $x <= $r / 2 && $y >= $x - $r / 2;
+    return $x >= 0 && $y <= 0 && $y >= $x - $r / 2;
 }
 
 function checkRectangle($x, $y, $r)
@@ -47,18 +47,16 @@ function checkHit($x, $y, $r)
 session_start();
 $start = microtime(true);
 date_default_timezone_set('Europe/Moscow');
-$currentTime = date('m/d/Y h:i:s a', time());
+$currentTime = date('d/m/Y H:i:s', time());
 
 $x = $_POST['x'];
 $y = $_POST['y'];
 $r = $_POST['r'];
 
-$validation = validateData($x, $y, $r);
-$hit = checkHit($x, $y, $r);
-$responseHit = $hit ? 'true' : 'false';
-$isValid = $validation ? 'true' : 'false';
+$isValid = validateData($x, $y, $r) ? 'true' : 'false';
+$hit = checkHit($x, $y, $r) ? 'true' : 'false';
 
-$executionTime = number_format((float)microtime(true) - $start, 8, '.', '');
+$executionTime = number_format(microtime(true) - $start, 8, '.', '');
 
 $data = "{" .
     "\"isValid\":\"$isValid\"," .
@@ -67,7 +65,7 @@ $data = "{" .
     "\"r\":\"$r\"," .
     "\"currentTime\":\"$currentTime\"," .
     "\"executionTime\":\"$executionTime\"," .
-    "\"hit\":\"$responseHit\"" .
+    "\"hit\":\"$hit\"" .
     "}";
 
 if (!isset($_SESSION['results'])) {
