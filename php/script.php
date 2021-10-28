@@ -36,7 +36,7 @@ function checkTriangle($x, $y, $r)
 
 function checkRectangle($x, $y, $r)
 {
-    return $x <= 0 && $y >= 0 && -$x >= -$r / 2 && $y <= $r;
+    return $x <= 0 && $y >= 0 && $x >= -$r / 2 && $y <= $r;
 }
 
 function checkHit($x, $y, $r)
